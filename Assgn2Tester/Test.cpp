@@ -20,7 +20,7 @@ TEST(Test, LevelTest){
 }
 TEST(Test, NameTest){
 	const Avatar &player = GetPlayer();
-	const Class = player.GetClass();
+	AvatarClass classType = player.GetClass();
 	EXPECT_EQ(Class, "Mage");
 }
 
