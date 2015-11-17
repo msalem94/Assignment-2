@@ -61,7 +61,7 @@ unsigned Avatar::GetHealth() const
 /*
 * Returns the Avatar's class
 */
-AvatarClass Avatar::GetClass() const
+Class Avatar::GetClass() const
 {
 	return _class;
 }

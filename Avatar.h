@@ -1,62 +1,62 @@
-/*
-* Declaration of the Avatar class.
-* An Avatar extends Actor. It contains character attributes that are used by human and AI players.
-*/
-#pragma once
-
-#include "Actor.h"
-#include "AvatarClass.h"
-
-class Avatar : public Actor
-{
-public:
-
-	Avatar(const std::string &n, const unsigned &l, const ClassType t);
-	Avatar(const Avatar &a);
-	~Avatar() {}
-
 	/*
-	* Returns the Avatar's name
+	* Declaration of the Avatar class.
+	* An Avatar extends Actor. It contains character attributes that are used by human and AI players.
 	*/
-	std::string GetName() const;
+	#pragma once
 
-	/*
-	* Returns the Avatar's level
-	*/
-	unsigned GetLevel() const;
+	#include "Actor.h"
+	#include "Class.h"
 
-	/*
-	* Returns the Avatar's health
-	*/
-	unsigned GetHealth() const;
+	class Avatar : public Actor
+	{
+	public:
 
-	/*
-	* Returns the Avatar's class object
-	*/
-	AvatarClass GetClass() const;
+		Avatar(const std::string &n, const unsigned &l, const ClassType t);
+		Avatar(const Avatar &a);
+		~Avatar() {}
 
-	/*
-	* Deals damage taken while in match
-	*/
-	void TakeDamage(const unsigned &damage);
+		/*
+		* Returns the Avatar's name
+		*/
+		std::string GetName() const;
 
-	/*
-	* Start Actor Interface
-	*/
-	void Draw(sf::RenderWindow &window) override;
+		/*
+		* Returns the Avatar's level
+		*/
+		unsigned GetLevel() const;
 
-	void SetPosition(const float &xPosition, const float &yPosition) override;
-	/*
-	* End Actor Interface
-	*/
+		/*
+		* Returns the Avatar's health
+		*/
+		unsigned GetHealth() const;
 
-protected:
+		/*
+		* Returns the Avatar's class object
+		*/
+		Class GetClass() const;
 
-	const std::string _name;
-	unsigned _level;
-	unsigned _health;
-	sf::Sprite _sprite;
-	sf::Image _sprite_image;
-	sf::Texture _sprite_texture;
-	const AvatarClass _class;
-};
+		/*
+		* Deals damage taken while in match
+		*/
+		void TakeDamage(const unsigned &damage);
+
+		/*
+		* Start Actor Interface
+		*/
+		void Draw(sf::RenderWindow &window) override;
+
+		void SetPosition(const float &xPosition, const float &yPosition) override;
+		/*
+		* End Actor Interface
+		*/
+
+	protected:
+
+		const std::string _name;
+		unsigned _level;
+		unsigned _health;
+		sf::Sprite _sprite;
+		sf::Image _sprite_image;
+		sf::Texture _sprite_texture;
+		const Class _class;
+	};

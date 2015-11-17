@@ -1,5 +1,5 @@
 /*
-* Declaration of AvatarSerializer class
+* Declaration of AvatarAvatarSerializer class
 * Singleton class for saving and loading of avatar data
 * MADE FOR WINDOWS OS ONLY
 */
@@ -11,15 +11,15 @@
 
 
 
-class Serializer
+class AvatarSerializer
 {
 public:
-	~Serializer();
+	~AvatarSerializer();
 
 	/*
-	* Returns the AvatarSerializer instance
+	* Returns the AvatarAvatarSerializer instance
 	*/
-	static Serializer &GetInstance();
+	static AvatarSerializer &GetInstance();
 
 	/*
 	* The member functions for saving and loading avatar data
@@ -33,9 +33,9 @@ public:
 	Avatar *GetPlayer() const;
 
 private:
-	Serializer();
-	Serializer(Serializer const&) = delete;
-	void operator=(Serializer const&) = delete;
+	AvatarSerializer();
+	AvatarSerializer(AvatarSerializer const&) = delete;
+	void operator=(AvatarSerializer const&) = delete;
 
 	Avatar *_currentPlayer;
 };
