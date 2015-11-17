@@ -1,5 +1,5 @@
 /*
-* Implementation of the Avatar class.
+This is from the team project
 */
 
 #include "Avatar.h"
