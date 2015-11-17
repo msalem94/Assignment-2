@@ -1,5 +1,5 @@
 /*
-* Implementation of serializer class
+This is from the team project
 */
 
 #include "Serializer.h"
