@@ -1,6 +1,7 @@
 #include <gtest\gtest.h>
 #include "AvatarSerializer.h"
 #include "Avatar.h"
+#include "Class.h"
 
 TEST(Test, SerializerTest)
 {
@@ -10,17 +11,17 @@ TEST(Test, SerializerTest)
 }
 TEST(Test, NameTest){
 	const Avatar &player = GetPlayer();
-	int Health = player.GetHealth();
+	unsigned Health = player.GetHealth();
 	EXPECT_EQ(Health, 3);
 }
 TEST(Test, LevelTest){
 	const Avatar &player = GetPlayer();
-	int level = player.GetLevel();
+	unsigned level = player.GetLevel();
 	EXPECT_EQ(level, 1);
 }
 TEST(Test, NameTest){
 	const Avatar &player = GetPlayer();
-	AvatarClass classType = player.GetClass();
+	Class classType = player.GetClass();
 	EXPECT_EQ(Class, "Mage");
 }
 
