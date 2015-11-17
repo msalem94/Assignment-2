@@ -1,33 +1,33 @@
 /*
-This is from the team project
+* Implementation of AvatarSerializer class
 */
 
-#include "Serializer.h"
+#include "AvatarAvatarSerializer.h"
 #include "Avatar.pb.h"
 
-Serializer::Serializer() :
+AvatarAvatarSerializer::AvatarAvatarSerializer() :
 	_currentPlayer(nullptr)
 {}
 
-Serializer::~Serializer()
+AvatarSerializer::~AvatarSerializer()
 {
 	if (_currentPlayer) delete _currentPlayer;
 }
 
-Serializer &Serializer::GetInstance()
+AvatarSerializer &AvatarSerializer::GetInstance()
 {
-	static Serializer instance;
+	static AvatarSerializer instance;
 	return instance;
 }
 
-void Serializer::SaveAvatar(const Avatar &data)
+void AvatarSerializer::SaveAvatar(const Avatar &data)
 {
 	GOOGLE_PROTOBUF_VERIFY_VERSION;
 
 	proto::Avatar avatar;
 }
 
-bool Serializer::LoadAvatar(const std::string &avatarName)
+bool AvatarSerializer::LoadAvatar(const std::string &avatarName)
 {
 	GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -38,7 +38,7 @@ bool Serializer::LoadAvatar(const std::string &avatarName)
 	return true;
 }
 
-Avatar *Serializer::GetPlayer() const
+Avatar *AvatarSerializer::GetPlayer() const
 {
 	return _currentPlayer;
 }
