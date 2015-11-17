@@ -5,7 +5,7 @@
 #pragma once
 
 #include "Actor.h"
-#include "AvatarClass.h"
+#include "Class.h"
 
 class Avatar : public Actor
 {
@@ -33,7 +33,7 @@ public:
 	/*
 	* Returns the Avatar's class object
 	*/
-	AvatarClass GetClass() const;
+	Class GetClass() const;
 
 	/*
 	* Deals damage taken while in match
@@ -58,5 +58,5 @@ protected:
 	sf::Sprite _sprite;
 	sf::Image _sprite_image;
 	sf::Texture _sprite_texture;
-	const AvatarClass _class;
+	const Class _class;
 };
